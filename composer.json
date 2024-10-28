@@ -1,0 +1,41 @@
+{
+    "name": "webdecero/webdecero-package-laravel-passport",
+    "description": "Patch to enable use of laravel/passport with mongodb/laravel-mongodb",
+    "version": "1.0.0",
+    "type": "library",
+    "keywords": ["webdecero", "mongodb", "laravel", "passport"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Uriel Acosta",
+            "role": "CEO",
+            "email": "uriel@webdecero.com",
+            "homepage": "https://webdecero.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "laravel/passport": "11.10.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webdecero\\Laravel\\Passport\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webdecero\\Laravel\\Passport\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webdecero\\Laravel\\Passport\\PassportServiceProvider"
+            ]
+        }
+    }
+}

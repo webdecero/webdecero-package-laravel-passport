@@ -10,8 +10,6 @@ TODO List
 
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Install Artisan Commands](#install-artisan-commands)
-- [Examples](#examples)
 
 ## Installation
 

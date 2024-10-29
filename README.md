@@ -1,6 +1,6 @@
 # Webdecero Patch Laravel Passport (Laravel + MongoDB + Passport)
 
-Patch to enable use of laravel/passport with mongodb/laravel-mongodb.
+Enable use of laravel/passport with mongodb/laravel-mongodb
 
 TODO List
 
@@ -25,30 +25,25 @@ Make sure you have the MongoDB PHP driver installed. You can find installation i
 #### PHP extension
 
 - **php**: ^8.1
-- **ext-curl**: *
-- **ext-json**: *
-- **ext-mbstring**: *
-- **Image Processing PHP Extension**: GD | Magic
 
 **WARNING**: The old mongo PHP driver is not supported.
 
 ### Laravel version Compatibility
 
-| Laravel | Package | Passport | intervention | laravel-mongodb   |
-| :------ | :------ | :------- | :----------- | :---------------- |
-| 8.x     | 0.1.x   | x        | v2           | ^3.8              |
-| 10.x    | 2.0.x   | 11.10.*  | v3           | ^4.1              |
+| Laravel | Package | Passport | laravel-mongodb   |
+| :------ | :------ | :------- | :---------------- |
+| 10.x    | 1.x     | 11.10.*  | ^4.1              |
 
 Installation using composer:
 
 ```
-composer require webdecero/webdecero-package-manager-api-laravel
+composer require webdecero/webdecero-package-laravel-passport
 ```
 
 **Optional** Add the service provider to `config/app.php`:
 
 ```php
-Webdecero\Manager\Api\ManagerServiceProvider::class,
+Webdecero\Manager\Api\PassportServiceProvider::class,
 ```
 
 ## Configuration

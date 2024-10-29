@@ -1,6 +1,6 @@
 {
     "name": "webdecero/webdecero-package-laravel-passport",
-    "description": "Patch to enable use of laravel/passport with mongodb/laravel-mongodb",
+    "description": "Enable use of laravel/passport with mongodb/laravel-mongodb",
     "version": "1.0.0",
     "type": "library",
     "keywords": ["webdecero", "mongodb", "laravel", "passport"],
@@ -16,9 +16,6 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8.1",
-        "ext-curl": "*",
-        "ext-json": "*",
-        "ext-mbstring": "*",
         "laravel/passport": "11.10.*"
     },
     "autoload": {

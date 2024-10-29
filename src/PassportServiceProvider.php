@@ -4,16 +4,16 @@ namespace Webdecero\Laravel\Passport;
 
 use Laravel\Passport\Passport;
 
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
+use Webdecero\Laravel\Passport\Models\Token;
+use Webdecero\Laravel\Passport\Models\Client;
+use Webdecero\Laravel\Passport\Models\AuthCode;
+use Webdecero\Laravel\Passport\Models\RefreshToken;
+use Webdecero\Laravel\Passport\Models\ClientCommand;
+use Webdecero\Laravel\Passport\Models\TokenRepository;
+use Webdecero\Laravel\Passport\Models\PersonalAccessClient;
 
-
-// use Webdecero\Manager\Api\Models\Passport\Token;
-// use Webdecero\Manager\Api\Models\Passport\Client;
-// use Webdecero\Manager\Api\Models\Passport\AuthCode;
-// use Webdecero\Manager\Api\Models\Passport\RefreshToken;
-// use Webdecero\Manager\Api\Models\Passport\ClientCommand;
-// use Webdecero\Manager\Api\Models\Passport\TokenRepository;
-// use Webdecero\Manager\Api\Models\Passport\PersonalAccessClient;
 
 //use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -36,10 +36,6 @@ class PassportServiceProvider extends ServiceProvider
         Passport::useAuthCodeModel(AuthCode::class);
         Passport::usePersonalAccessClientModel(PersonalAccessClient::class);
 
-
-        // Passport::tokensExpireIn(now()->addYears(10));
-        // Passport::personalAccessTokensExpireIn(now()->addWeeks(8));
-
     }
 
     /**
@@ -53,7 +49,7 @@ class PassportServiceProvider extends ServiceProvider
 
         Passport::ignoreMigrations();
 
-        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+        $loader = AliasLoader::getInstance();
         $loader->alias('Laravel\Passport\TokenRepository', TokenRepository::class);
         $loader->alias('Laravel\Passport\Console\ClientCommand', ClientCommand::class);
 

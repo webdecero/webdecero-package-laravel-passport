@@ -1,7 +1,7 @@
 {
     "name": "webdecero/webdecero-package-laravel-passport",
     "description": "Enable use of laravel/passport with mongodb/laravel-mongodb",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "library",
     "keywords": ["webdecero", "mongodb", "laravel", "passport"],
     "license": "MIT",

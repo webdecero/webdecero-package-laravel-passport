@@ -1,4 +1,4 @@
-# Webdecero Patch Laravel Passport (Laravel + MongoDB + Passport)
+# Patch Laravel Passport (Laravel + MongoDB + Passport)
 
 Enable use of laravel/passport with mongodb/laravel-mongodb
 

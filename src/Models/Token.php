@@ -23,8 +23,9 @@ class Token extends Model
         $this->attributes['model'] = $agent->device() != false ? $agent->device() : 'not_found';
         $this->attributes['platform'] = $agent->platform() != false ? $agent->platform() : 'not_found';
         $this->attributes['browser'] = $agent->browser() != false ? $agent->browser() : 'not_found';
-        $this->attributes['device'] =   $agent->isDesktop()? 'desktop': ($agent->isPhone()?'phone': 'not_found');
+        $this->attributes['device'] = $agent->isDesktop() ? 'desktop' : ($agent->isPhone() ? 'phone' : 'not_found');
     }
+
 
     /**
      * The database table used by the model.
@@ -73,6 +74,16 @@ class Token extends Model
     public function client()
     {
         return $this->belongsTo(Passport::clientModel());
+    }
+
+    /**
+     * Get the refresh token associated with the token.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function refreshToken()
+    {
+        return $this->hasOne(Passport::refreshTokenModel(), 'access_token_id');
     }
 
     /**
@@ -143,5 +154,15 @@ class Token extends Model
     public function transient()
     {
         return false;
+    }
+
+    /**
+     * Get the current connection name for the model.
+     *
+     * @return string|null
+     */
+    public function getConnectionName()
+    {
+        return $this->connection ?? config('passport.connection');
     }
 }

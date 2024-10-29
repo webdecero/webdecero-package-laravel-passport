@@ -28,9 +28,9 @@ Make sure you have the MongoDB PHP driver installed. You can find installation i
 
 ### Laravel version Compatibility
 
-| Laravel | Package | Passport | laravel-mongodb   |
-| :------ | :------ | :------- | :---------------- |
-| 10.x    | 1.x     | 11.10.*  | ^4.1              |
+| Laravel | Package | Passport |
+| :------ | :------ | :------- |
+| 10.x    | 1.x     | 11.10.*  |
 
 Installation using composer:
 

@@ -30,6 +30,7 @@ class PassportServiceProvider extends ServiceProvider
     public function boot()
     {
 
+
         Passport::useClientModel(Client::class);
         Passport::useTokenModel(Token::class);
         Passport::useRefreshTokenModel(RefreshToken::class);
@@ -46,8 +47,6 @@ class PassportServiceProvider extends ServiceProvider
     public function register()
     {
 
-
-        Passport::ignoreMigrations();
 
         $loader = AliasLoader::getInstance();
         $loader->alias('Laravel\Passport\TokenRepository', TokenRepository::class);

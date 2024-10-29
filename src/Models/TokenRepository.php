@@ -2,6 +2,7 @@
 
 namespace Webdecero\Laravel\Passport\Models;
 
+
 use Laravel\Passport\Passport;
 
 use Carbon\Carbon;
@@ -57,6 +58,7 @@ class TokenRepository
      * Get a valid token instance for the given user and client.
      *
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
+     * @param  \Laravel\Passport\Client  $client
      * @return \Laravel\Passport\Token|null
      */
     public function getValidToken($user, $client)
@@ -109,6 +111,7 @@ class TokenRepository
      * Find a valid token for the given user and client.
      *
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
+     * @param  \Laravel\Passport\Client  $client
      * @return \Laravel\Passport\Token|null
      */
     public function findValidToken($user, $client)

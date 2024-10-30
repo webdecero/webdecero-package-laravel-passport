@@ -1,43 +1,14 @@
 <?php
+
 namespace Webdecero\Laravel\Passport\Models;
 
-use Laravel\Passport\Passport;
+use Laravel\Passport\PersonalAccessClient as ExtendPassport;
 
-use MongoDB\Laravel\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\DocumentModel;
 
-class PersonalAccessClient extends Model
+class PersonalAccessClient extends ExtendPassport
 {
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'oauth_personal_access_clients';
-
-    /**
-     * The guarded attributes on the model.
-     *
-     * @var array
-     */
-    protected $guarded = [];
-
-    /**
-     * Get all of the authentication codes for the client.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function client()
-    {
-        return $this->belongsTo(Passport::clientModel());
-    }
-
-    /**
-     * Get the current connection name for the model.
-     *
-     * @return string|null
-     */
-    public function getConnectionName()
-    {
-        return $this->connection ?? config('passport.connection');
-    }
+    use DocumentModel;
+    // protected $primaryKey = '_id';
+    // protected $keyType = 'string';
 }

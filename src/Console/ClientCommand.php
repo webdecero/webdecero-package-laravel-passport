@@ -1,6 +1,6 @@
 <?php
 
-namespace Webdecero\Laravel\Passport\Models;
+namespace Webdecero\Laravel\Passport\Console;
 
 use Illuminate\Console\Command;
 // use Laravel\Passport\Client;

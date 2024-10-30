@@ -6,16 +6,20 @@ use Laravel\Passport\Passport;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
+
+
 use Webdecero\Laravel\Passport\Models\Token;
 use Webdecero\Laravel\Passport\Models\Client;
 use Webdecero\Laravel\Passport\Models\AuthCode;
 use Webdecero\Laravel\Passport\Models\RefreshToken;
-use Webdecero\Laravel\Passport\Models\ClientCommand;
 use Webdecero\Laravel\Passport\Models\TokenRepository;
 use Webdecero\Laravel\Passport\Models\PersonalAccessClient;
 
 
-//use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Webdecero\Laravel\Passport\Console\ClientCommand;
+use Webdecero\Laravel\Passport\Console\InstallCommand;
+
+
 
 class PassportServiceProvider extends ServiceProvider
 {
@@ -51,6 +55,7 @@ class PassportServiceProvider extends ServiceProvider
         $loader = AliasLoader::getInstance();
         $loader->alias('Laravel\Passport\TokenRepository', TokenRepository::class);
         $loader->alias('Laravel\Passport\Console\ClientCommand', ClientCommand::class);
+        $loader->alias('Laravel\Passport\Console\InstallCommand', InstallCommand::class);
 
     }
 

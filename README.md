@@ -2,10 +2,6 @@
 
 Enable use of laravel/passport with mongodb/laravel-mongodb
 
-TODO List
-
-- [ ] V2 laravel 11
-
 ## Table of contents
 
 - [Installation](#installation)
@@ -31,6 +27,7 @@ Make sure you have the MongoDB PHP driver installed. You can find installation i
 | Laravel | Package | Passport |
 | :------ | :------ | :------- |
 | 10.x    | 1.x     | 11.10.*  |
+| 11.x    | 2.x     | 12.x     |
 
 Installation using composer:
 
@@ -41,7 +38,7 @@ composer require webdecero/webdecero-package-laravel-passport
 **Optional** Add the service provider to `config/app.php`:
 
 ```php
-Webdecero\Manager\Api\PassportServiceProvider::class,
+Webdecero\Laravel\Passport\PassportServiceProvider::class
 ```
 
 ## Configuration

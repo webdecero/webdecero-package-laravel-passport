@@ -10,8 +10,8 @@ use Laravel\Passport\Token as TokenPassport;
 class Token extends TokenPassport
 {
     use DocumentModel;
-    // protected $primaryKey = '_id';
-    // protected $keyType = 'string';
+    protected $primaryKey = '_id';
+    protected $keyType = 'string';
 
 
     public function __construct()
